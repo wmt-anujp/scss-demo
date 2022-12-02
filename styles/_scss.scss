@@ -1,0 +1,394 @@
+//mixin
+// @import './variable';
+
+@mixin wh-full($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin minwh-full($Minwidth, $Minheight) {
+  width: $Minwidth;
+  height: $Minheight;
+}
+
+@mixin font($color, $fs, $lh, $fw, $ff) {
+  color: $color;
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+  font-family: $ff;
+}
+
+@mixin dispaly($display, $fdir, $ai, $ji) {
+  display: $display;
+  flex-direction: $fdir;
+  align-items: $ai;
+  justify-content: $ji;
+}
+
+
+@mixin margin($height, $selectors...) {
+  @for $i from 0 to length($selectors) {
+    #{nth($selectors, $i + 1)} {
+      margin: $i*4px+ $height;
+    }
+  }
+}
+
+@include margin(0, ".m-0", ".m-1", ".m-2", ".m-3", ".m-4", ".m-5", ".m-6", ".m-7", ".m-8", ".m-9", ".m-10", ".m-11");
+
+@mixin marginTop($height, $selectors...) {
+  @for $i from 0 to length($selectors) {
+    #{nth($selectors, $i + 1)} {
+      margin-top: $i*4px+ $height;
+    }
+  }
+}
+
+@include marginTop(0, ".mt-0", ".mt-1", ".mt-2", ".mt-3", ".mt-4", ".mt-5", ".mt-6", ".mt-7", ".mt-8", ".mt-9", ".mt-10", ".mt-11");
+
+@mixin marginLeft($height, $selectors...) {
+  @for $i from 0 to length($selectors) {
+    #{nth($selectors, $i + 1)} {
+      margin-left: $i*4px+ $height;
+    }
+  }
+}
+
+@include marginLeft(0, ".ml-0", ".ml-1", ".ml-2", ".ml-3", ".ml-4", ".ml-5", ".ml-6", ".ml-7", ".ml-8", ".ml-9", ".ml-10", ".ml-11");
+
+@mixin padding($height, $selectors...) {
+  @for $i from 0 to length($selectors) {
+    #{nth($selectors, $i + 1)} {
+      padding: $i*4px+ $height;
+    }
+  }
+}
+
+@include padding(0, ".p-0", ".p-1", ".p-2", ".p-3", ".p-4", ".p-5", ".p-6", ".p-7", ".p-8", ".p-9", ".p-10", ".p-11");
+
+@mixin paddingTop($height, $selectors...) {
+  @for $i from 0 to length($selectors) {
+    #{nth($selectors, $i + 1)} {
+      padding-top: $i*4px+ $height;
+    }
+  }
+}
+
+@include paddingTop(0, ".pt-0", ".pt-1", ".pt-2", ".pt-3", ".pt-4", ".pt-5", ".pt-6", ".pt-7", ".pt-8", ".pt-9", ".pt-10", ".pt-11");
+
+@mixin paddingBottom($height, $selectors...) {
+  @for $i from 0 to length($selectors) {
+    #{nth($selectors, $i + 1)} {
+      padding-bottom: $i*4px+ $height;
+    }
+  }
+}
+
+@include paddingBottom(0, ".pb-0", ".pb-1", ".pb-2", ".pb-3", ".pb-4", ".pb-5", ".pb-6", ".pb-7", ".pb-8", ".pb-9", ".pb-10", ".pb-11");
+
+@mixin paddingy($height, $selectors...) {
+  @for $i from 0 to length($selectors) {
+    #{nth($selectors, $i + 1)} {
+      padding: $i*4px 0;
+    }
+  }
+}
+
+@include paddingy(0, ".py-0", ".py-1", ".py-2", ".py-3", ".py-4", ".py-5", ".py-6", ".py-7", ".py-8", ".py-9", ".py-10", ".py-11");
+
+@mixin paddingleft($height, $selectors...) {
+  @for $i from 0 to length($selectors) {
+    #{nth($selectors, $i + 1)} {
+      padding-left: $i*4px;
+    }
+  }
+}
+
+@include paddingleft(0, ".pl-0", ".pl-1", ".pl-2", ".pl-3", ".pl-4", ".pl-5", ".pl-6", ".pl-7", ".pl-8", ".pl-9", ".pl-10", ".pl-11");
+
+@mixin fontsize($height, $selectors...) {
+  @for $i from 0 to length($selectors) {
+    #{nth($selectors, $i + 1)} {
+      font-size: $i*4px;
+    }
+  }
+}
+
+@include fontsize(10, ".fs-0", ".fs-1", ".fs-2", ".fs-3", ".fs-4", ".fs-5", ".fs-6", ".fs-7", ".fs-8", ".fs-9", ".fs-10", ".fs-11");
+
+
+
+
+//   @use "sass:meta";
+
+// @mixin text-colors($args...) {
+//   @debug meta.keywords($args);
+//   @each $name, $color in meta.keywords($args) {
+//     #{$name} {
+//       color: $color;
+//     }
+//   }
+// }
+
+// @include text-colors(
+//   $text-blue-50: rgb(239 246 255),
+//   $text-blue-100:  rgb(219 234 254),
+//   $text-blue-200: rgb(191 219 254),
+//   $text-blue-300: rgb(147 197 253),
+//   $text-blue-400:  rgb(96 165 250),
+//   $text-blue-500: rgb(59 130 246),
+// )
+
+// @use "sass:meta";
+
+// @mixin syntax-colors($args...) {
+//   @debug meta.keywords($args);
+//   // (string: #080, comment: #800, variable: #60b)
+
+//   @each $name, $color in meta.keywords($args) {
+//     pre span.stx-#{$name} {
+//       color: $color;
+//     }
+//   }
+// }
+
+// @include syntax-colors(
+//   $string: #080,
+//   $comment: #800,
+//   $variable: #60b,
+// )
+
+@mixin color_class_generator($prefix) {
+
+  @each $name,
+  $rgb in $color {
+    @if $prefix=="text" {
+      &-#{""+$name} {
+        color: $rgb !important;
+      }
+    }
+
+    @if $prefix=="bg" {
+      &-#{""+$name} {
+        background-color: $rgb !important;
+      }
+    }
+  }
+}
+
+@include color_class_generator(text);
+
+@mixin typography_class_generator($type) {
+
+  @each $name,
+  $value in $font {
+    @if $type=="weight" {
+      &-#{""+$name} {
+        font-weight: $value !important;
+      }
+    }
+
+    @if $type=="fontsize" {
+      &-#{""+$name} {
+        font-size: $value !important;
+      }
+    }
+
+    @if $type=="align" {
+      &-#{""+$name} {
+        text-align: $value !important;
+      }
+    }
+  }
+}
+
+@mixin position_class_generator() {
+
+  @each $name,
+  $value in $position {
+
+    // @if $type == "position" {
+    &-#{""+$name} {
+      position: $value !important;
+    }
+
+    // }
+  }
+}
+
+@mixin display_class_generator() {
+
+  @each $name,
+  $value in $display {
+
+    // @if $type == "display" {
+    &-#{""+$name} {
+      display: $value !important;
+    }
+
+    // }
+  }
+}
+
+// @mixin alignment_class_generator($type) {
+//   @each $name, $value in $alignment {
+//     @if $type == "display" {
+//       &-#{""+$name}{
+//         display: $value !important;
+//       }
+//     }
+//     @if $type == "justify-content" {
+//       &-#{""+$name}{
+//         justify-content: $value !important;
+//       }
+//     }
+//     @if $type == "justify-items" {
+//       &-#{""+$name}{
+//         justify-items: $value !important;
+//       }
+//     }
+//     @if $type == "justify-content" {
+//       &-#{""+$name}{
+//         justify-content: $value !important;
+//       }
+//     }
+//   }
+// }
+
+
+//varibales
+$primary_bg:#f0f3f9;
+$commen_bg:white;
+
+$border:1px solid rgb(230, 230, 230);
+
+$white_text:white;
+
+$gray1:#51595e;
+$gray2:rgba(100, 117, 137, 0.7);
+$gray3:rgba(103, 103, 103, 0.874);
+$gray5:rgb(44, 44, 44);
+
+$blue1:#0389c9;
+
+$color:( // blue
+  // text-blue-500
+  // bg-blue-500
+  blue-primary:#0389c9,
+  blue-50: rgb(239, 246, 255),
+  blue-100: rgb(219, 234, 254),
+  blue-200: rgb(191, 219, 254),
+  blue-300: rgb(147, 197, 253),
+  blue-400: rgb(96, 165, 250),
+  blue-500: rgb(59, 130, 246),
+  blue-600: rgb(37, 99, 235),
+  blue-700: rgb(29, 78, 216),
+  blue-800: rgb(30, 64, 175),
+  blue-900: rgb(30, 58, 138),
+
+  // 'lochmara'
+  // DEFAULT: '#0389C9',
+  lochmara-50: '#86D7FD',
+  lochmara-100: '#72D0FD',
+  lochmara-200: '#4AC3FC',
+  lochmara-300: '#22B5FC',
+  lochmara-400: '#04A4F1',
+  lochmara-500: '#0389C9',
+  lochmara-600: '#026392',
+  lochmara-700: '#013E5A',
+  lochmara-800: '#011823',
+  lochmara-900: '#000000',
+
+  // white
+  white:white,
+
+  // gray
+  gray-100: rgb(243, 244, 246),
+  gray-200: rgb(229, 231, 235),
+  gray-300: rgb(209, 213, 219),
+  gray-400: rgb(156, 163, 175),
+  gray-500: rgb(107, 114, 128),
+  gray-600: rgb(75, 85, 99),
+  gray-700: rgb(55, 65, 81),
+  gray-800: rgb(31, 41, 55),
+  gray-900: rgb(17, 24, 39),
+
+  red red-50 : rgb(254, 242, 242),
+  red-100: rgb(254, 226, 226),
+  red-200: rgb(254, 202, 202),
+  red-300: rgb(252, 165, 165),
+  red-400: rgb(248, 113, 113),
+  red-500: rgb(239, 68, 68),
+  red-600: rgb(220, 38, 38),
+  red-700: rgb(185, 28, 28),
+  red-800: rgb(153, 27, 27),
+  red-900: rgb(127, 29, 29),
+
+  green green-50: rgb(240, 253, 244),
+  green-100: rgb(220, 252, 231),
+  green-200: rgb(187, 247, 208),
+  green-300: rgb(134, 239, 172),
+  green-400: rgb(74, 222, 128),
+  green-500: rgb(34, 197, 94),
+  green-600: rgb(22, 163, 74),
+  green-700: rgb(21, 128, 61),
+  green-800: rgb(22, 101, 52),
+  green-900: rgb(20, 83, 45),
+);
+
+$font:( // class ex:font-thin
+  thin: 100,
+  extralight: 200,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  black: 900,
+
+  // class ex:text-center
+  left: left,
+  center: center,
+  right: right,
+  justify: justify,
+
+  // class ex:text-sm
+  sm: 0.875rem,
+  /* 14px */
+  base: 1rem,
+  /* 16px */
+  lg: 1.125rem,
+  /* 18px */
+  xl: 1.25rem,
+  /* 20px */
+  2xl: 1.5rem,
+  /* 24px */
+  3xl: 1.875rem,
+  /* 30px */
+  4xl: 2.25rem,
+  /* 36px */
+  5xl: 3rem,
+  /* 48px */
+  6xl: 3.75rem,
+  /* 60px */
+);
+
+$position:(static:static,
+  fixed:fixed,
+  absolute:absolute,
+  relative:relative,
+  sticky:sticky,
+);
+
+$display:(block:block,
+  inline-block:inline-block,
+  inline:inline,
+  flex:flex,
+  inline-flex:inline-flex,
+  none:none,
+);
+// $alignment:(
+//     start:flex-start;
+// )

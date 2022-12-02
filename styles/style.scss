@@ -1,0 +1,21 @@
+@import './variable';
+@import './header';
+
+.contact {
+    @include flexing(column, lightblue, 100%, flex, center, center);
+
+    button {
+        color: red;
+    }
+
+    // @extend header;
+    background-color: black;
+    width: 100%;
+    // width: math.div(300px, 960px)*100%;
+}
+
+// :root {
+//     --backcolor: $backgroundcolor;
+// }
+
+@include define-emoji("women-holding-hands", yellow);

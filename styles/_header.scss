@@ -1,0 +1,22 @@
+@import './mixin';
+// @import './scss';
+
+header {
+    @include flexing(column, lightyellow, 100vh, flex, center, center);
+    color: $textcolor;
+    // @include color_class_generator(text);
+    @include marginTop(0, ".mt-0", ".mt-1", ".mt-2", ".mt-3", ".mt-4", ".mt-5", ".mt-6", ".mt-7", ".mt-8", ".mt-9", ".mt-10", ".mt-11");
+
+    li {
+        @include transition;
+    }
+
+    button {
+        margin-left: 10px;
+        background: $backgroundcolor;
+
+        &:hover {
+            background: red;
+        }
+    }
+}

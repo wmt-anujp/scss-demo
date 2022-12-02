@@ -1,0 +1,129 @@
+header {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: lightyellow;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: darkcyan;
+}
+
+header .mt-0 {
+  margin-top: 0px;
+}
+
+header .mt-1 {
+  margin-top: 4px;
+}
+
+header .mt-2 {
+  margin-top: 8px;
+}
+
+header .mt-3 {
+  margin-top: 12px;
+}
+
+header .mt-4 {
+  margin-top: 16px;
+}
+
+header .mt-5 {
+  margin-top: 20px;
+}
+
+header .mt-6 {
+  margin-top: 24px;
+}
+
+header .mt-7 {
+  margin-top: 28px;
+}
+
+header .mt-8 {
+  margin-top: 32px;
+}
+
+header .mt-9 {
+  margin-top: 36px;
+}
+
+header .mt-10 {
+  margin-top: 40px;
+}
+
+header .mt-11 {
+  margin-top: 44px;
+}
+
+header li:nth-child(1) {
+  -webkit-transition: all 0.2s 0.1s ease-in;
+  transition: all 0.2s 0.1s ease-in;
+}
+
+header li:nth-child(2) {
+  -webkit-transition: all 0.2s 0.2s ease-in;
+  transition: all 0.2s 0.2s ease-in;
+}
+
+header li:nth-child(3) {
+  -webkit-transition: all 0.2s 0.3s ease-in;
+  transition: all 0.2s 0.3s ease-in;
+}
+
+header li:nth-child(4) {
+  -webkit-transition: all 0.2s 0.4s ease-in;
+  transition: all 0.2s 0.4s ease-in;
+}
+
+header li:nth-child(5) {
+  -webkit-transition: all 0.2s 0.5s ease-in;
+  transition: all 0.2s 0.5s ease-in;
+}
+
+header button {
+  margin-left: 10px;
+  background: #38928e;
+}
+
+header button:hover {
+  background: red;
+}
+
+.contact {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: lightblue;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  width: 100%;
+}
+
+.contact button {
+  color: red;
+}
+
+span.women-holding-hands {
+  background-color: yellow;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+@mixin flexing($direction, $background, $height, $display, $jc, $ai) {
+    flex-direction: $direction;
+    background: $background;
+    height: $height;
+    display: $display;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin define-emoji($name, $bg) {
+    span.#{$name} {
+        background-color: $bg;
+    }
+}
+
+@mixin marginTop($height, $selectors...) {
+    @for $i from 0 to length($selectors) {
+        #{nth($selectors, $i + 1)} {
+            margin-top: $i*4px+ $height;
+        }
+    }
+}
+
+@mixin transition {
+    @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+            transition: all .2s #{$i * .1}s ease-in;
+        }
+    }
+}
